@@ -75,53 +75,79 @@ function SectionSeparator({ label }: { label?: string }) {
   );
 }
 
-/* ─── Subscribe Form (Interactive & Micro-animated) ─── */
+/* ─── Subscribe Form (Interactive & Connected to API) ─── */
 function SubscribeForm({ placeholder, buttonText }: { placeholder: string; buttonText: string }) {
   const [subscribed, setSubscribed] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
+  const [errorMsg, setErrorMsg] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setTimeout(() => {
-        setSubscribed(false);
+    if (!email.trim()) return;
+
+    setLoading(true);
+    setErrorMsg('');
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setSubscribed(true);
         setEmail('');
-      }, 3500);
+        setTimeout(() => setSubscribed(false), 4000);
+      } else {
+        setErrorMsg(data.error || 'Failed to subscribe. Please try again.');
+      }
+    } catch {
+      setErrorMsg('Network error. Please try again.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto relative z-10"
-      data-stagger
-    >
-      <input
-        type="email"
-        required
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder={placeholder}
-        className="flex-1 px-6 py-4 border text-sm outline-none transition-all duration-300 rounded-xl backdrop-blur-md bg-white/[0.06] border-white/20 text-white placeholder:text-marble-400 focus:border-terracotta-500 focus:bg-white/10"
-      />
-      <button
-        type="submit"
-        className={`px-8 py-4 text-xs tracking-[0.15em] uppercase font-semibold transition-all duration-300 rounded-xl shadow-lg cursor-pointer active:scale-[0.96] flex items-center justify-center gap-2 ${
-          subscribed
-            ? 'bg-emerald-500 text-white scale-[1.02]'
-            : 'bg-terracotta-500 text-white hover:bg-terracotta-400 shadow-terracotta-500/20'
-        }`}
-      >
-        {subscribed ? (
-          <>
-            <span>✓</span> Subscribed!
-          </>
-        ) : (
-          buttonText
-        )}
-      </button>
-    </form>
+    <div className="max-w-lg mx-auto relative z-10" data-stagger>
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+        <input
+          type="email"
+          required
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder={placeholder}
+          disabled={loading || subscribed}
+          className="flex-1 px-6 py-4 border text-sm outline-none transition-all duration-300 rounded-xl backdrop-blur-md bg-white/[0.06] border-white/20 text-white placeholder:text-marble-400 focus:border-terracotta-500 focus:bg-white/10 disabled:opacity-50"
+        />
+        <button
+          type="submit"
+          disabled={loading || subscribed}
+          className={`px-8 py-4 text-xs tracking-[0.15em] uppercase font-semibold transition-all duration-300 rounded-xl shadow-lg cursor-pointer active:scale-[0.96] flex items-center justify-center gap-2 ${
+            subscribed
+              ? 'bg-emerald-500 text-white scale-[1.02]'
+              : 'bg-terracotta-500 text-white hover:bg-terracotta-400 shadow-terracotta-500/20'
+          } disabled:opacity-75`}
+        >
+          {loading ? (
+            <span className="animate-pulse">Subscribing...</span>
+          ) : subscribed ? (
+            <>
+              <span>✓</span> Subscribed!
+            </>
+          ) : (
+            buttonText
+          )}
+        </button>
+      </form>
+      {errorMsg && (
+        <p className="text-xs text-red-400 mt-2 text-center">{errorMsg}</p>
+      )}
+    </div>
   );
 }
 
