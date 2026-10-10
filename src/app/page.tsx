@@ -60,7 +60,7 @@ function SectionSeparator({ label }: { label?: string }) {
         <div className="group relative flex items-center gap-3 px-5 py-2 rounded-full border border-marble-800/60 bg-ink-900/80 backdrop-blur-md shadow-lg transition-all duration-300 hover:border-terracotta-500/50 text-marble-300">
           <span className="w-1.5 h-1.5 rotate-45 bg-terracotta-400 opacity-80 group-hover:scale-125 transition-transform" />
           <span className="text-[10px] tracking-[0.3em] uppercase font-medium text-marble-300">
-            {label || 'Claude Guide'}
+            {label || 'Guide Angel'}
           </span>
           <span className="w-1.5 h-1.5 rotate-45 bg-terracotta-400 opacity-80 group-hover:scale-125 transition-transform" />
         </div>
@@ -731,8 +731,8 @@ export default function Home() {
               <div className="max-w-xs">
                 <Link href="/" className="group flex items-center">
                   <span className="font-anthropic-serif text-2xl md:text-3xl font-medium tracking-tight">
-                    <span style={{ color: '#cc785c' }}>Claude</span>{' '}
-                    <span className="text-white">Guide</span>
+                    <span style={{ color: '#cc785c' }}>Guide</span>{' '}
+                    <span className="text-white">Angel</span>
                   </span>
                 </Link>
                 <p className="mt-5 text-sm leading-relaxed font-light text-marble-400">
@@ -775,7 +775,7 @@ export default function Home() {
 
             <div className="mt-16 pt-8 border-t flex flex-col sm:flex-row justify-between items-center gap-4 border-marble-800/30">
               <p className="text-[10px] tracking-[0.15em] uppercase text-marble-500">
-                © {new Date().getFullYear()} Claude Guide. {t.footer.rights}
+                © {new Date().getFullYear()} Guide Angel. {t.footer.rights}
               </p>
               <p className="text-[10px] tracking-[0.15em] uppercase text-marble-500">
                 {t.footer.builtWith} <span className="text-terracotta-500">φιλοτιμία</span>

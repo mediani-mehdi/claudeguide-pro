@@ -23,14 +23,14 @@ export async function POST(request: Request) {
           Authorization: `Bearer ${resendApiKey}`,
         },
         body: JSON.stringify({
-          from: 'Claude Guide <newsletter@claudeguide.pro>',
+          from: 'Guide Angel <newsletter@claudeguide.pro>',
           to: [email],
-          subject: 'Welcome to Claude Guide Journal',
+          subject: 'Welcome to Guide Angel Journal',
           html: `
             <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #181614;">
-              <h2 style="color: #cc785c;">Welcome to Claude Guide</h2>
+              <h2 style="color: #cc785c;">Welcome to Guide Angel</h2>
               <p>Thank you for subscribing to our journal. You will receive our latest guides, prompt engineering breakdowns, and Claude AI workflows directly in your inbox.</p>
-              <p style="color: #666; font-size: 12px; margin-top: 30px;">© Claude Guide Press — <a href="https://claudeguide.pro">claudeguide.pro</a></p>
+              <p style="color: #666; font-size: 12px; margin-top: 30px;">© Guide Angel Press — <a href="https://claudeguide.pro">claudeguide.pro</a></p>
             </div>
           `,
         }),
@@ -46,7 +46,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       success: true,
-      message: 'Successfully subscribed to Claude Guide newsletter.',
+      message: 'Successfully subscribed to Guide Angel newsletter.',
     });
   } catch (err: any) {
     console.error('Subscription API Error:', err);

@@ -20,24 +20,24 @@ export async function generateMetadata({
   const url = `https://claudeguide.pro/blog/${slug}`;
 
   return {
-    title: `${article.title} | Claude Guide`,
+    title: `${article.title} | Guide Angel`,
     description: article.excerpt,
     keywords: [article.category, 'Claude AI', 'Claude 3.5 Sonnet', article.title],
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title: `${article.title} | Claude Guide`,
+      title: `${article.title} | Guide Angel`,
       description: article.excerpt,
       url,
-      siteName: 'Claude Guide',
+      siteName: 'Guide Angel',
       type: 'article',
       publishedTime: article.date,
-      authors: ['Claude Guide Editorial Team'],
+      authors: ['Guide Angel Editorial Team'],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${article.title} | Claude Guide`,
+      title: `${article.title} | Guide Angel`,
       description: article.excerpt,
     },
   };

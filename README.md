@@ -1,4 +1,4 @@
-# Bloggy Claude
+# Guide Angel
 
 A minimal, elegant blog website for learning how to use Claude AI. Built with Next.js 14 and Tailwind CSS.
 

@@ -45,8 +45,8 @@ export function Navbar({ showNavLinks = true }: NavbarProps) {
             className="group flex items-center gap-2.5 active:scale-[0.97] transition-transform duration-150"
           >
             <span className="font-anthropic-serif text-2xl md:text-3xl font-medium tracking-tight">
-              <span style={{ color: '#cc785c' }}>Claude</span>{' '}
-              <span className="text-white group-hover:text-marble-200 transition-colors">Guide</span>
+              <span style={{ color: '#cc785c' }}>Guide</span>{' '}
+              <span className="text-white group-hover:text-marble-200 transition-colors">Angel</span>
             </span>
           </Link>
 

@@ -72,12 +72,12 @@ export function ArticleView({ article, prevArticle, nextArticle }: ArticleViewPr
     datePublished: article.date,
     author: {
       '@type': 'Organization',
-      name: 'Claude Guide',
+      name: 'Guide Angel',
       url: 'https://claudeguide.pro',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Claude Guide',
+      name: 'Guide Angel',
       logo: {
         '@type': 'ImageObject',
         url: 'https://claudeguide.pro/logo.png',
@@ -194,7 +194,7 @@ export function ArticleView({ article, prevArticle, nextArticle }: ArticleViewPr
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-marble-800/60 to-terracotta-500/40" />
           <div className="flex items-center gap-2 px-4 py-1.5 rounded-full border border-marble-800/60 bg-ink-900/80 backdrop-blur-md text-[10px] tracking-[0.25em] uppercase text-marble-400">
             <span className="w-1.5 h-1.5 rotate-45 bg-terracotta-400" />
-            <span>Claude Guide Journal</span>
+            <span>Guide Angel Journal</span>
             <span className="w-1.5 h-1.5 rotate-45 bg-terracotta-400" />
           </div>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-marble-800/60 to-terracotta-500/40" />
@@ -285,8 +285,8 @@ export function ArticleView({ article, prevArticle, nextArticle }: ArticleViewPr
         <div className="max-w-3xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
           <Link href="/" className="group flex items-center active:scale-[0.97] transition-transform">
             <span className="font-anthropic-serif text-2xl font-medium tracking-tight">
-              <span style={{ color: '#cc785c' }}>Claude</span>{' '}
-              <span className="text-white">Guide</span>
+              <span style={{ color: '#cc785c' }}>Guide</span>{' '}
+              <span className="text-white">Angel</span>
             </span>
           </Link>
           <div className="flex items-center gap-6 text-xs text-marble-400">
