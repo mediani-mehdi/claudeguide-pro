@@ -314,4 +314,16 @@ export const postTranslations: Record<string, { en: { title: string; excerpt: st
       readTime: '13 min de lecture',
     },
   },
+  'presentation-powerpoint-claude': {
+    en: {
+      title: 'How to Build a PowerPoint Presentation with Claude from Raw Notes',
+      excerpt: 'Turn 12 pages of unstructured notes into a sharp, persuasive PowerPoint deck in 5 clear steps with Claude.',
+      readTime: '5 min read',
+    },
+    fr: {
+      title: 'Comment construire une présentation PowerPoint avec Claude, à partir de simples notes',
+      excerpt: '12 pages de notes en vrac et une réunion demain matin ? Découvrez la méthode en 5 étapes pour concevoir une présentation percutante avec Claude sans y passer la nuit.',
+      readTime: '5 min de lecture',
+    },
+  },
 };

@@ -311,6 +311,16 @@ export default function Home() {
 
   const recentPosts = [
     {
+      id: 15,
+      title: 'Comment construire une présentation PowerPoint avec Claude',
+      excerpt: '12 pages de notes en vrac et une réunion demain matin ? Découvrez la méthode en 5 étapes pour concevoir une présentation percutante avec Claude sans y passer la nuit.',
+      slug: 'presentation-powerpoint-claude',
+      date: 'XII · X · MMXXVI',
+      category: 'Productivity',
+      readTime: '5 min',
+      number: 'ΧV',
+    },
+    {
       id: 1,
       title: 'Getting Started with Claude AI',
       excerpt: 'From account creation to your first conversation - a complete walkthrough for beginners finding their way with Claude.',
@@ -339,16 +349,6 @@ export default function Home() {
       category: 'Development',
       readTime: '10 min',
       number: 'ΙΙΙ',
-    },
-    {
-      id: 4,
-      title: 'Productivity Hacks with Claude',
-      excerpt: 'Email drafting, research synthesis, meeting prep - proven daily workflows that save hours every single week.',
-      slug: 'productivity-hacks-claude',
-      date: 'XXVI · VII · MMXXVI',
-      category: 'Productivity',
-      readTime: '6 min',
-      number: 'ΙV',
     },
   ];
 
@@ -396,6 +396,16 @@ export default function Home() {
   ];
 
   const archivePosts = [
+    {
+      id: 4,
+      title: 'Productivity Hacks with Claude',
+      excerpt: 'Email drafting, research synthesis, meeting prep - proven daily workflows that save hours every single week.',
+      slug: 'productivity-hacks-claude',
+      date: 'XXVI · VII · MMXXVI',
+      category: 'Productivity',
+      readTime: '6 min',
+      number: 'ΙV',
+    },
     {
       id: 9,
       title: 'Prompt Templates That Actually Work',
